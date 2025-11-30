@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM Demo</title>
+    <style>
+        .container {
+            padding: 20px;
+            margin-top: 10px;
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
-  <h1> welcome</h1>  
+
+    <h1 id="mainHeading">Original Heading</h1>
+
+    <p>This is paragraph 1.</p>
+    <p>This is paragraph 2.</p>
+    <p>This is paragraph 3.</p>
+
+    <div class="container">
+        This is a container div.
+    </div>
+
+    <script>
+        
+        const heading = document.getElementById("mainHeading");
+        heading.textContent = "Welcome to the DOM World!";
+
+        
+        const paragraphs = document.getElementsByTagName("p");
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].style.color = "blue";
+        }
+
+        
+        const containerDiv = document.querySelector(".container");
+        containerDiv.style.backgroundColor = "yellow";
+    </script>
+
 </body>
 </html>
