@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic List</title>
+    <style>
+    
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <button id="addBtn">Add Item</button>
+
+    <script>
+        
+        const list = document.querySelector("#myList");
+        const btn = document.getElementById("addBtn");
+
+        btn.addEventListener("click", function () {
+            
+            const newLi = document.createElement("li");
+            newLi.textContent = "New Item";
+
+            
+            const position = list.children.length + 1;
+
+            
+            if (position % 2 === 1) {
+                
+                newLi.style.fontWeight = "bold";
+                newLi.style.color = "blue";
+            } else {
+
+                newLi.style.fontStyle = "italic";
+                newLi.style.color = "red";
+            }
+
+            
+            list.appendChild(newLi);
+        });
+    </script>
+
+</body>
+</html>
